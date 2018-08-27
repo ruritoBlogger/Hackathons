@@ -8,3 +8,8 @@
   <%= user.password %>
 <% end %>
 
+<h3>ログイン中の情報</h3>
+
+<% if @current_user %>
+  <%= @current_user.name %>
+<% end %>
