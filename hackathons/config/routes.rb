@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'main/top' => "main#top"
+  get 'main/index' => "main#index"
   post 'user/new' => "user#new"
   post 'user/login' => "user#login"
   post 'user/logout' => "user#logout"

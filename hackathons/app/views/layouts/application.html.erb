@@ -35,6 +35,7 @@
         </div>
       <% else %>
         <div id="Loginning">
+          <div class=""header_right>
           <%= link_to("/user/logout",{method: :post}) do %>
             <div id="header_logout">
               ログアウト
@@ -43,6 +44,14 @@
           <%= link_to("/user/remove",{method: :post}) do %>
             退会
           <% end %>
+          </div>
+          <div class="header-left">
+            <%= link_to ("/main/index") do %>
+              <div id="header_index">
+                住居の空き状況
+              </div>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </header>
