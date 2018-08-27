@@ -11,7 +11,20 @@
 
   <body>
     <header>
-      <h3>これはヘッダーです</h3>
+      <div class="header-left">
+        <%= link_to("/home/top") do %>
+          <div id="header_top">
+                トップページへのリンクです
+          </div>
+          <% end %>
+      </div>
+          <div class="header-right">
+            <%= link_to("/home/new") do %>
+              <div id="header_new">
+                新規登録へのリンクです
+                </div>
+              <% end %>
+          </div>
     </header>
     <%= yield %>
   </body>
