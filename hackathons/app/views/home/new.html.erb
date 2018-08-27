@@ -1,1 +1,11 @@
 <h3>これは新規登録のページです</h3>
+
+<div class="link">
+  <%= form_tag("/user/new") do %>
+    <p>ユーザー名</p>
+    <input name="name">
+    <p>パスワード</p>
+    <input name = "password">
+    <input type="submit" value="新規登録">
+    <% end %>
+</div>
