@@ -1,4 +1,14 @@
 <h3>ここはログインページです</h3>
+
+<h3>ログイン画面</h3>
+<%= form_tag("/user/login") do %>
+  <p>ユーザー名</p>
+  <input name="name">
+  <p>パスワード</p>
+  <input name="password">
+  <input type="submit",value="ログイン">
+<% end %>
+
 <h2>会員様</h2>
 
 <% @users.each do |user| %>
