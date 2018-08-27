@@ -11,25 +11,33 @@
 
   <body>
     <header>
-      <div class="header-left">
-        <%= link_to("/home/top") do %>
-          <div id="header_top">
-                トップページへのリンクです
+      <% if !(@current_user) %>
+        <div id="notLogin">
+          <div class="header-left">
+            <%= link_to("/home/top") do %>
+              <div id="header_top">
+                  トップページへのリンクです
+              </div>
+            <% end %>
           </div>
-          <% end %>
-      </div>
           <div class="header-right">
             <%= link_to("/home/new") do %>
               <div id="header_new">
                 新規登録へのリンクです
-                </div>
-              <% end %>
-              <%= link_to("/home/login") do %>
-                <div id="header_login">
-                  ログインページヘのリンクです
-                </div>
-              <% end %>
+              </div>
+            <% end %>
+            <%= link_to("/home/login") do %>
+              <div id="header_login">
+                ログインページヘのリンクです
+              </div>
+            <% end %>
           </div>
+        </div>
+      <% else %>
+        <div id="Loginning">
+
+        </div>
+      <% end %>
     </header>
     <%= yield %>
   </body>
