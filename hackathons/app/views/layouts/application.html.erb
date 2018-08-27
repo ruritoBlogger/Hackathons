@@ -35,11 +35,14 @@
         </div>
       <% else %>
         <div id="Loginning">
-            <%= link_to("/user/logout",{method: :post}) do %>
-              <div id="header_logout">
-                ログアウト
-              </div>
-            <% end %>
+          <%= link_to("/user/logout",{method: :post}) do %>
+            <div id="header_logout">
+              ログアウト
+            </div>
+          <% end %>
+          <%= link_to("/user/remove",{method: :post}) do %>
+            退会
+          <% end %>
         </div>
       <% end %>
     </header>

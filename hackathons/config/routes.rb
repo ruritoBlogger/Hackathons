@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'user/new' => "user#new"
   post 'user/login' => "user#login"
   post 'user/logout' => "user#logout"
+  post 'user/remove' => "user#remove"
   get 'home/top' => "home#top"
   get 'home/new' => "home#new"
   get 'home/login' => "home#login"
