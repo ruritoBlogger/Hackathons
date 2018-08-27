@@ -35,7 +35,11 @@
         </div>
       <% else %>
         <div id="Loginning">
-
+            <%= link_to("/user/logout",{method: :post}) do %>
+              <div id="header_logout">
+                ログアウト
+              </div>
+            <% end %>
         </div>
       <% end %>
     </header>
