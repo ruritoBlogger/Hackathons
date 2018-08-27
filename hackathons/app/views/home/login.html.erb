@@ -1,1 +1,9 @@
 <h3>ここはログインページです</h3>
+<h2>会員様</h2>
+
+<% @users.each do |user| %>
+  <p>ユーザー:</p>
+  <%= user.id %>
+  <%= user.name %>
+  <%= user.password %>
+<% end %>
