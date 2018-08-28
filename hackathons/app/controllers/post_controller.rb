@@ -7,6 +7,10 @@ class PostController < ApplicationController
   end
 
   def apply2
+    @form = Form.find_by(id: params[:id])
+  end
+
+  def makedummy
 
   end
 

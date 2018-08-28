@@ -3,16 +3,20 @@
 <% @forms.each do |form| %>
 
   <% user =  User.find_by(id: form.user_id) %>
-  希望者：<%= user.name %>
-  <% if form.area == 1 %>
-    対象エリア:東京
-  <% elsif form.area == 2 %><br>
-    対象エリア:南草津<br>
+  <% if user %>
+    希望者：<%= user.name %>
+    <% if form.area == 1 %>
+      対象エリア:東京
+    <% elsif form.area == 2 %><br>
+      対象エリア:南草津<br>
+    <% end %>
+    @<%= form.area %>
+    日程:<%= form.month %>月<%= form.startDay %>日から<%= form.longDay %>日間<br>
+    <%= link_to("/post/#{form.id}") do %>
+      <div class="showLink">
+        詳細
+      </div>
+    <% end %>
   <% end %>
-  日程:<%= form.month %>月<%= form.startDay %>日から<%= form.longDay %>日間<br>
-  <%= link_to("/post/#{form.id}") do %>
-    <div class="showLink">
-      詳細
-    </div>
-  <% end %>
+
 <% end %>

@@ -23,12 +23,12 @@ class FormController < ApplicationController
 
   def add
     @form = Form.new(user_id: session[:user_id],
-                     area: nil,
+                     area: 1,
                      month: params[:month],
                      startDay: params[:startDay],
                      longDay: params[:longDay])
     @form.save
-    redirect_to("/post/apply2")
+    redirect_to("/post/#{@form.id}/apply2")
   end
 
   def delete
