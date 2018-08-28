@@ -49,9 +49,9 @@ class MainController < ApplicationController
 
   def addTokyo
     @user = User.find_by(id: session[:user_id])
-    @house = House.find_by(user_id: session[:id])
+    @house = House.find_by(user_id: session[:user_id])
       if @house.area == 1
-        redirect_to("main/#{session[:user_id]}")
+        redirect_to("/main/#{session[:user_id]}")
       else
         @house.area = 1
         @house.save
@@ -66,6 +66,7 @@ class MainController < ApplicationController
       if @house.area == 2
         redirect_to("/main/#{session[:user_id]}")
       else
+        @house.area = 2
         @house.save
         flash[:notice] = "area selected!"
         redirect_to("/main/#{session[:user_id]}")
