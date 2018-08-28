@@ -1,9 +1,13 @@
 <h3>住居の空き状況一覧です</h3>
 
 <% @houses.each do |house| %>
+
+
   <%= house.user_name %>
   :<%= house.house_name %>
   状況：<%= house.detail %>
   今日は宿泊可能かどうか：<%= house.canVisit %>
   注意事項：<%= house.caution %>
+
+
 <% end %>
