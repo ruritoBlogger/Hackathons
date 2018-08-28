@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'form/index' => "form#index"
+  get 'form/:id/show' => "form#show"
 
   get 'main/top' => "main#top"
   get 'main/index' => "main#index"
