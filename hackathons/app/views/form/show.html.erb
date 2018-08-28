@@ -1,12 +1,14 @@
 <h3>宿泊希望のフォームの詳細ページです</h3>
 <% user =  User.find_by(id: @form.user_id) %>
-希望者：<%= user.name %>
-<% if @form.area == 1 %>
-  対象エリア:東京
-<% elsif @form.area == 2 %><br>
-  対象エリア:南草津<br>
-<% end %>
-日程:<%= @form.month %>月<%= @form.startDay %>日から<%= @form.longDay %>日間<br>
-<%= form_tag("") do %>
-  <input type="submit" value="泊まってええんやで~">
-<% end %>
+<div class="test">
+  希望者：<%= user.name %>
+  <% if @form.area == 1 %>
+    対象エリア:東京
+  <% elsif @form.area == 2 %><br>
+    対象エリア:南草津<br>
+  <% end %>
+  日程:<%= @form.month %>月<%= @form.startDay %>日から<%= @form.longDay %>日間<br>
+  <%= form_tag("/form/#{@form.id}/create",{method: :post}) do %>
+    <input type="submit" value="泊まってええんやで~">
+  <% end %>
+</div>

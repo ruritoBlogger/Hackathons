@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   get 'form/index' => "form#index"
   get 'form/:id' => "form#show"
+  get 'form/:id/info' => "form#info"
+  post 'form/:id/create' => "form#create"
+
+
 
   get 'main/top' => "main#top"
   get 'main/index' => "main#index"
