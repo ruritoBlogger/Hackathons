@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  area: 1
+  month: 1
+  startDay: 1
+  longDay: 1
+
+two:
+  user_id: 1
+  area: 1
+  month: 1
+  startDay: 1
+  longDay: 1
