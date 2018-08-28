@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_171149) do
+ActiveRecord::Schema.define(version: 2018_08_28_230214) do
 
   create_table "forms", force: :cascade do |t|
     t.integer "user_id"
@@ -20,18 +20,6 @@ ActiveRecord::Schema.define(version: 2018_08_28_171149) do
     t.integer "longDay"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "houses", force: :cascade do |t|
-    t.string "user_name"
-    t.string "house_name"
-    t.text "detail"
-    t.string "canVisit"
-    t.text "caution"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "area"
   end
 
   create_table "posts", force: :cascade do |t|
