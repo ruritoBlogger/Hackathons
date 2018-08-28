@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_034101) do
+ActiveRecord::Schema.define(version: 2018_08_28_095657) do
 
   create_table "houses", force: :cascade do |t|
     t.string "user_name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_034101) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_name"
   end
 
 end
