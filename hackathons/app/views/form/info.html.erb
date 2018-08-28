@@ -1,1 +1,11 @@
 宿泊申請に対する回答や宿泊許可をした宿泊申請一覧です
+<h3>宿泊申請</h3>
+<h3>宿泊許可</h3>
+<% @posts.each do |post| %>
+  <% form = Form.find_by(id: post.form_id) %>
+  <% user = User.find_by(id: form.user_id) %>
+  <%= user.name %>さんの<%= form.month %>月<%= form.startDay %>日から<%= form.longDay %>日間の宿泊を受け付けています
+  <%= form_tab("",{method: :post}) do %>
+    <input type="submit" value="許可取り消し">
+  <% end %>
+<% end %>

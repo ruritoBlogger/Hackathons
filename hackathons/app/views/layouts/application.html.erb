@@ -45,13 +45,18 @@
                     </div>
                   <% end %>
                   <%= link_to ("/main/index") do %>
-                    <div class="logo link l-align-center">
+                    <div class="link l-align-center">
                       住居の空き状況
                     </div>
                   <% end %>
                   <%= link_to("/form/index") do %>
-                    <div class="logo link l-align-center">
+                    <div class="logo link l-align-left">
                       宿泊希望者一覧
+                    </div>
+                  <% end %>
+                  <%= link_to("/form/#{session[:user_id]}/info") do %>
+                    <div class="logo link l-align-left">
+                      宿泊許可・宿泊申請
                     </div>
                   <% end %>
                   <%= link_to("/main/top") do %>
