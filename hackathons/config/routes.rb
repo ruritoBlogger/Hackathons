@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'main/top' => "main#top"
   get 'main/index' => "main#index"
   get 'main/:id' => "main#show"
+  get 'main/:id/edit' => "main#edit"
 
   post 'user/new' => "user#new"
   post 'user/login' => "user#login"

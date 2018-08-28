@@ -12,4 +12,8 @@ class MainController < ApplicationController
     @house = House.find_by(user_id: session[:user_id])
   end
 
+  def edit
+    @user = User.find_by(id: session[:user_id])
+  end
+
 end
