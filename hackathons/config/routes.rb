@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'main/:id/select' => "main#select"
 
   post "main/:id/update" => "main#update"
+  post "main/:id/update2" => "main#update2"
   post "main/:id/addTokyo" => "main#addTokyo"
   post "main/:id/addMinakusa" => "main#addMinakusa"
 

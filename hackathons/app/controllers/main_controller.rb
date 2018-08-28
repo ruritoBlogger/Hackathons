@@ -44,6 +44,26 @@ class MainController < ApplicationController
     end
   end
 
+  def update2
+    @user = User.find_by(id: session[:user_id])
+    @user.name = params[:name]
+    @user.password = params[:password]
+    @name = params[:name]
+
+    if params[:image]
+      @user.image_name = "#{@user.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/user_images/#{@user.image_name}",image.read)
+    end
+    if @user.save
+      flash[:notice] = "sucsess"
+      redirect_to("/main/#{session[:user_id]}")
+    else
+      flash[:notice] = "failed"
+      render("main/edit2")
+    end
+  end
+
   def select
   end
 

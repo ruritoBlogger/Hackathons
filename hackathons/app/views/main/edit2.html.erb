@@ -1,2 +1,10 @@
 <p>個人情報の更新</p>
-<%= form_tag("/") %>
+<%= form_tag("/main/#{session[:user_id]}/update2",{method: :post, multipart: true}) do %>
+  <p>名前</p>
+  <input name="name" value='<% @name %>'>
+  <p>パスワード</p>
+  <input name="password">
+  <P>プロフィール画像</P>
+  <input name="image" type="file">
+  <input type="submit" value="更新">
+<% end %>
