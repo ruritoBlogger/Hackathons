@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   get 'main/index' => "main#index"
   get 'main/:id' => "main#show"
   get 'main/:id/edit' => "main#edit"
-  get 'main/:id/serect' => "main#select"
+  get 'main/:id/select' => "main#select"
 
   post "main/:id/update" => "main#update"
+  post "main/:id/addTokyo" => "main#addTokyo"
+  post "main/:id/addMinakusa" => "main#addMinakusa"
 
 
   post 'user/new' => "user#new"

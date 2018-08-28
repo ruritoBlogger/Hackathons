@@ -1,1 +1,7 @@
 <p>地域選択ページです</p>
+<%= form_tag("/main/#{session[:user_id]/addTokyo}",{method: :post) do %>
+  <input type="submit" value="東京">
+<% end %>
+<%= form_tag("/main/#{session[:user_id]/addMinakusa}",{method: :post}) do %>
+  <input type="submit" value="南草津">
+<% end %>

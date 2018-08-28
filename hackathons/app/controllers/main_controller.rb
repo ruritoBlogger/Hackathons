@@ -44,6 +44,13 @@ class MainController < ApplicationController
   end
 
   def select
+  end
+
+  def addTokyo
+
+  end
+
+  def addMinakusa
 
   end
 
