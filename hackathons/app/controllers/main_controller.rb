@@ -10,6 +10,13 @@ class MainController < ApplicationController
   def show
     @user = User.find_by(id: session[:user_id])
     @house = House.find_by(user_id: session[:user_id])
+    if @house
+    else
+      flash[:notice] = "please make your data"
+      @house = House.new(user_id: session[:user_id])
+      @house.save
+      redirect_to("/main/#{session[:user_id]}/edit")
+    end
   end
 
   def edit
