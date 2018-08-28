@@ -5,7 +5,7 @@ class FormController < ApplicationController
   end
 
   def show
-
+    @form = Form.find_by(id: params[:id])
   end
 
 end
