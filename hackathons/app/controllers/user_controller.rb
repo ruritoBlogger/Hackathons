@@ -2,7 +2,8 @@ class UserController < ApplicationController
 
   def new
     @user = User.new(name: params[:name],
-                      password: params[:password])
+                     password: params[:password],
+                     image_name: "default.jpg")
     if @user.save
       flash[:notice] = "sucsess"
       session[:user_id] = @user.id
