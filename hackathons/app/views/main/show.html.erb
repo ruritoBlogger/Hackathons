@@ -8,7 +8,7 @@
 お泊り可能かどうか：<%= @house.canVisit %><br>
 注意事項：<%= @house.caution %><br>
 
-<%= link_to("/main/#{@user.id}/edit") do %>
+<%= link_to("/main/#{session[:user_id]}/edit") do %>
   <div id="editLink">
     お家情報の更新
   </div>

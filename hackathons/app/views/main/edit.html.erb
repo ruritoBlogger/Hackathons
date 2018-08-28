@@ -1,1 +1,12 @@
 <p>ここはユーザーのお家情報の更新ページです</p>
+<%= form_tag("/main/#{session[:user_id]}/update") do %>
+  <p>家の名前</p>
+  <input name="house_name">
+  <p>家の詳細</p>
+  <textarea name="detail"></textarea>
+  <p>お泊り可能かどうか（条件付きでも可）</p>
+  <input name="canVisit">
+  <p>注意事項</p>
+  <textarea name="caution"></textarea>
+  <input type="submit" value="更新">
+<% end %>

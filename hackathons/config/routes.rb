@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'main/:id' => "main#show"
   get 'main/:id/edit' => "main#edit"
 
+  post "main/:id/update" => "main#update"
+
   post 'user/new' => "user#new"
   post 'user/login' => "user#login"
   post 'user/logout' => "user#logout"
