@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+
   def new
     @user = User.new(name: params[:name],
                       password: params[:password])
@@ -8,7 +9,7 @@ class UserController < ApplicationController
       redirect_to("/main/top")
     else
       flash[:notice] = "failed"
-      redirect_to("/home/top")
+      redirect_to("/home/new")
     end
   end
 
@@ -21,7 +22,7 @@ class UserController < ApplicationController
       redirect_to("/main/top")
     else
       flash[:notice] = "failed"
-      redirect_to("/home/top")
+      redirect_to("/home/login")
     end
   end
 

@@ -60,6 +60,13 @@
         </div>
       <% end %>
     </header>
+    <div id=""main>
+      <% if flash[:notice] %>
+        <div id="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
