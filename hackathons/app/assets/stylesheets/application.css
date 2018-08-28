@@ -1336,3 +1336,7 @@ dd{
     margin-right:730px;
 }
 
+.mybar{
+    z-index: 10;
+}
+

@@ -15,7 +15,7 @@
         <div class="l-wrapper">
           <div class="l-header">
             <div class="global-nav">
-              <div class="l-constrained">
+              <div class="l-constrained mybar">
                 <div id="notLogin">
                   <%= link_to("/home/top") do %>
                     <div class="logo link l-align-left myidea">
@@ -32,42 +32,40 @@
                       ログイン
                     </div>
                   <% end %>
-                </div>
+                  </div>
+                <% else %>
+                  <div id="logining">
+                    <%= link_to("/user/logout",{method: :post}) do %>
+                      <div class="link l-align-right">
+                        ログアウト
+                      </div>
+                    <% end %>
+                    <%= link_to("/user/remove",{method: :post}) do %>
+                      <div class="link l-align-right">
+                        退会
+                      </div>
+                    <% end %>
+                    <%= link_to ("/main/index") do %>
+                      <div class="logo l-align-center">
+                        住居の空き状況
+                      </div>
+                    <% end %>
+                    <%= link_to("/main/top") do %>
+                      <div class="link l-align-right">
+                        メインページ
+                      </div>
+                    <% end %>
+                    <%= link_to("/main/#{session[:user_id]}") do %>
+                      <div class="link l-align-right">
+                        マイページ
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
-      <% else %>
-        <div id="Loginning">
-          <div class=""header_right>
-          <%= link_to("/user/logout",{method: :post}) do %>
-            <div id="header_logout">
-              ログアウト
-            </div>
-          <% end %>
-          <%= link_to("/user/remove",{method: :post}) do %>
-            退会
-          <% end %>
-          </div>
-          <div class="header-left">
-            <%= link_to ("/main/index") do %>
-              <div id="header_index">
-                住居の空き状況
-              </div>
-            <% end %>
-            <%= link_to("/main/top") do %>
-              <div id="header_maintop">
-                メインページ
-              </div>
-            <% end %>
-            <%= link_to("/main/#{session[:user_id]}") do %>
-              <div id="header_mypage">
-                マイページ
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
     </header>
     <div id=""main>
       <% if flash[:notice] %>
