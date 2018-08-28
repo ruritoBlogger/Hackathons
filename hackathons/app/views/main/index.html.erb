@@ -2,12 +2,13 @@
 
 <% @houses.each do |house| %>
 
-
-  <%= house.user_name %>
-  :<%= house.house_name %>
-  状況：<%= house.detail %>
-  今日は宿泊可能かどうか：<%= house.canVisit %>
-  注意事項：<%= house.caution %>
-
+  <div class="houseInfo">
+    <%= house.user_name %>
+    :<%= house.house_name %>
+    状況：<%= house.detail %>
+    今日は宿泊可能かどうか：<%= house.canVisit %>
+    注意事項：<%= house.caution %>
+    ユーザーID：<%= house.user_id %>
+  </div>
 
 <% end %>

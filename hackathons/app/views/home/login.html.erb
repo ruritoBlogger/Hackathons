@@ -7,7 +7,7 @@
   <input name="name">
   <p>パスワード</p>
   <input name="password">
-  <input type="submit",value="ログイン">
+  <input type="submit", value="ログイン">
 <% end %>
 
 <h2>会員様</h2>
@@ -19,8 +19,9 @@
   <%= user.password %>
 <% end %>
 
-<h3>ログイン中の情報</h3>
+<h3>メモ</h3>
+<p>同じユーザー名がある場合新規登録できないようにする</p>
+<p>ログインや新規登録に失敗した時のエラーの告知</p>
+<p>家の情報の登録・更新</p>
+<p>家の画像とユーザーの画像の登録</p>
 
-<% if @current_user %>
-  <%= @current_user.name %>
-<% end %>
