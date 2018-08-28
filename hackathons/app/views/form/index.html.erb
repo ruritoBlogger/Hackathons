@@ -9,5 +9,10 @@
   <% elsif form.area == 2 %><br>
     対象エリア:南草津<br>
   <% end %>
-  日程:<%= form.month %>月<%= form.startDay %>日から<%= form.longDay %>日間
+  日程:<%= form.month %>月<%= form.startDay %>日から<%= form.longDay %>日間<br>
+  <%= link_to("/form/#{form.user_id}") do %>
+    <div class="showLink">
+      詳細
+    </div>
+  <% end %>
 <% end %>
