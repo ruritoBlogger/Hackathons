@@ -1,18 +1,25 @@
 Rails.application.routes.draw do
 
+  get 'post/new'
   get 'form/index' => "form#index"
-  get 'form/:id' => "form#show"
-  get 'form/:id/info' => "form#info"
+  get 'form/info' => "form#info"
+  get 'form/apply' => "form#apply"
+
+  post 'form/add' => "form#add"
   post 'form/:id/create' => "form#create"
+  post 'form/:id/select/delete' => "form#delete"
 
+  get 'post/:id' => "post#show"
+  get 'post/:id/apply2' => "post#apply2"
 
+  post 'post/:id/makeTokyo' => "post#makeTokyo"
+  post 'post/:id/makeMinakusa' => "post#makeMinakusa"
 
   get 'main/top' => "main#top"
   get 'main/index' => "main#index"
   get 'main/:id' => "main#show"
   get 'main/:id/edit' => "main#edit"
   get 'main/:id/select' => "main#select"
-
 
   post "main/:id/update" => "main#update"
   post "main/:id/addTokyo" => "main#addTokyo"
