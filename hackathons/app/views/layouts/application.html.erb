@@ -56,6 +56,11 @@
                 メインページ
               </div>
             <% end %>
+            <%= link_to("/main/#{session[:user_id]}") do %>
+              <div id="header_mypage">
+                マイページ
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>
