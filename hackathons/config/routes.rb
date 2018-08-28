@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'form/index' => "form#index"
+
   get 'main/top' => "main#top"
   get 'main/index' => "main#index"
   get 'main/:id' => "main#show"
   get 'main/:id/edit' => "main#edit"
   get 'main/:id/select' => "main#select"
+
 
   post "main/:id/update" => "main#update"
   post "main/:id/addTokyo" => "main#addTokyo"
