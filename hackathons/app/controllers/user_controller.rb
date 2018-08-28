@@ -15,7 +15,8 @@ class UserController < ApplicationController
 
   def login
     @user = User.find_by(name: params[:name],
-                         password: params[:password])
+                         password: params[:password],
+                         image_name: "default.jpg")
     if @user
       flash[:notice] = "sucsess"
       session[:user_id] = @user.id
