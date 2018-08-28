@@ -36,11 +36,15 @@ class MainController < ApplicationController
 
     if @house.save
       flash[:notice] = "edit sucsess!"
-      redirect_to("/main/#{session[:user_id]}")
+      redirect_to("/main/#{session[:user_id]}/serect")
     else
       flash[:notice] = "failed"
       render('main/update')
     end
+  end
+
+  def select
+
   end
 
 end
