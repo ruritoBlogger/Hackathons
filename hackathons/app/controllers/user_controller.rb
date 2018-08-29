@@ -7,12 +7,12 @@ class UserController < ApplicationController
                      password: params[:password],
                      image_name: "default.jpg")
 
-    @twitter = params[:twitter]
+    #@twitter = params[:twitter]
 
-    if @twitter
-      user_img(@twitter)
-      flash[:notice] = "OK"
-    end
+    #if @twitter
+    #  user_img(@twitter)
+    #  flash[:notice] = "OK"
+    #end
 
     if @user.save
       session[:user_id] = @user.id
