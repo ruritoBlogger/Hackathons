@@ -18,12 +18,6 @@
   <p>ユーザー:</p>
   <%= user.id %>
   <%= user.name %>
-  <%= user.password %>\<br>
-  <img src='<%= "/user_images/#{user.image_name}" %>' >
+  <%= user.password %><br>
 <% end %>
-
-<h3>メモ</h3>
-<p>同じユーザー名がある場合新規登録できないようにする</p>
-<p>不正アクセスの防止</p>
-<p>パスワードを暗号化して保存</p>
 
