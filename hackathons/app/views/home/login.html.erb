@@ -1,16 +1,18 @@
-<h3>ここはログインページです</h3>
+<div class="l-constrained">
+  <h1 class="border_heading">ログイン</h1>
+  <%= form_tag("/user/login") do %>
+    <div class="box">
+      <p class="name">ユーザー名</p>
+      <input name="name">
+    </div>
+    <div class="box">
+      <p class="name">パスワード</p>
+      <input name="password">
+    </div>
+    <input class="button button-success" type="submit" value="ログイン">
+  <% end %>
+</div>
 
-
-<h3>ログイン画面</h3>
-<%= form_tag("/user/login") do %>
-  <p>ユーザー名</p>
-  <input name="name">
-  <p>パスワード</p>
-  <input name="password">
-  <input type="submit" value="ログイン">
-<% end %>
-
-<h2>会員様</h2>
 
 <% @users.each do |user| %>
   <p>ユーザー:</p>
@@ -22,8 +24,6 @@
 
 <h3>メモ</h3>
 <p>同じユーザー名がある場合新規登録できないようにする</p>
-<p>ログインや新規登録に失敗した時のエラーの告知</p>
-<p>家の画像とユーザーの画像の登録</p>
 <p>不正アクセスの防止</p>
 <p>パスワードを暗号化して保存</p>
 
