@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post 'post/:id/dummy' => "post#dummy"
   post 'post/:id/makeTokyo' => "post#makeTokyo"
   post 'post/:id/makeMinakusa' => "post#makeMinakusa"
+  post 'post/:id/destroy' => "post#destroy"
 
   get 'main/top' => "main#top"
   get 'main/index' => "main#index"

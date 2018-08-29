@@ -29,5 +29,11 @@ class PostController < ApplicationController
     redirect_to("/form/index")
   end
 
+  def destroy
+    @form = Form.find_by(id: params[:id])
+    @form.destroy
+    redirect_to("/form/info")
+  end
+
 
 end

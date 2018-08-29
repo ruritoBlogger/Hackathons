@@ -16,6 +16,7 @@ class FormController < ApplicationController
 
   def info
     @posts = Post.where(user_id: session[:user_id])
+    @forms = Form.where(user_id: session[:user_id])
   end
 
   def apply

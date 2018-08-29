@@ -1,6 +1,4 @@
 <p>地域選択</p>
-<% form_tag("/post/#{session[:user_id]}/makedummy",{method: :post}) do%>
-<% end %>
 <%= form_tag("/post/#{@form.id}/makeTokyo",{method: :post}) do %>
   <input type="submit" value="東京">
 <% end %>
