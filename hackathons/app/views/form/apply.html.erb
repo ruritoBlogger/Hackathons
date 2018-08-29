@@ -1,9 +1,11 @@
-宿泊申請フォームです
+<div class="l-constrained ">
+<h1 class="border_heading">宿泊申請フォーム</h1>
 
 <%= form_tag("/form/add",{method: :post}) do %>
-  <p>日程</p>
-<input name="month">月
-<input name="startDay">日から
-<input name="longDay">日間宿泊を希望する
-<input type="submit" value="地域選択">
+  <p></p>
+<input name="month" style="width:30px;">月
+<input name="startDay" style="width:30px;">日から
+<input name="longDay" style="width:60px;">日間宿泊を希望する<br><br><br>
+<input type="submit" class="button-success button" value="地域選択">
 <% end %>
+</div>

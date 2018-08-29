@@ -34,6 +34,11 @@
                 </div>
               <% else %>
                 <div id="logining">
+                  <%= link_to("/home/top") do %>
+                    <div class="logo link l-align-left">
+                      Book
+                    </div>
+                  <% end %>
                   <%= link_to("/user/logout",{method: :post}) do %>
                     <div class="link l-align-right">
                       ログアウト
@@ -45,23 +50,23 @@
                     </div>
                   <% end %>
                   <%= link_to ("/main/index") do %>
-                    <div class="link l-align-center">
-                      住居の空き状況
+                    <div class="link l-align-right">
+                      空き状況
                     </div>
                   <% end %>
                   <%= link_to("/form/index") do %>
-                    <div class="logo link l-align-left">
+                    <div class="link l-align-right">
                       宿泊希望者一覧
                     </div>
                   <% end %>
                   <%= link_to("/form/info") do %>
-                    <div class="logo link l-align-left">
-                      宿泊許可・宿泊申請
+                    <div class=" link l-align-right">
+                      宿泊許可・申請
                     </div>
                   <% end %>
                   <%= link_to("/main/top") do %>
                     <div class="link l-align-right">
-                      メインページ
+                      メイン
                     </div>
                   <% end %>
                   <%= link_to("/main/#{session[:user_id]}") do %>
@@ -76,7 +81,7 @@
           </div>
         </div>
     </header>
-    <div id=""main>
+    <div id="main">
       <% if flash[:notice] %>
         <div id="scc">
           <%= flash[:notice] %>

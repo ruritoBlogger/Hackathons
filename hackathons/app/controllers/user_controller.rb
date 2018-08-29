@@ -8,7 +8,8 @@ class UserController < ApplicationController
     @twitter = params[:twitter]
 
     if @twitter
-      system("python3 ../../public/profile_fecth.py #{@twitter}")
+      py_path = File.absolute_path("../../public")
+      system("python3 " + py_path + "/profile_fetch.py #{@twitter}")
       flash[:notice] = "OK"
     end
 
