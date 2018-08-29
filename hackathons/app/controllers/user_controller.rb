@@ -4,6 +4,10 @@ class UserController < ApplicationController
     @user = User.new(name: params[:name],
                      password: params[:password],
                      image_name: "default.jpg")
+
+    @twitter = params[:twitter]
+    system("python3 profile_fecth.py ")
+
     if @user.save
       flash[:notice] = "sucsess"
       session[:user_id] = @user.id
