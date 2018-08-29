@@ -1,5 +1,5 @@
 <p>ここはユーザーのお家情報の更新ページです</p>
-<%= form_tag("/main/#{session[:user_id]}/update") do %>
+<%= form_tag("/main/#{session[:user_id]}/update",{multipart: true}) do %>
   <p>自分の名前</p>
   <input name="name" value='<%= @house.user_name %>'>
   <p>家の名前</p>
@@ -10,6 +10,8 @@
   <input name="canVisit" value='<%= @house.canVisit %>' >
   <p>注意事項</p>
   <textarea name="caution"><%= @house.caution %></textarea>
+  <p>お家の画像選択</p>
+  <input type="file" name="image_name">
   <input type="submit" value="地域選択">
 <% end %>
 
