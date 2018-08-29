@@ -1,7 +1,9 @@
-<p>地域選択ページです</p>
+<div class="l-constrained">
+<h1 class="border_heading">地域選択ページです</h1>
 <%= form_tag("/main/#{session[:user_id]}/addTokyo",{method: :post}) do %>
-  <input type="submit" value="東京">
+  <input type="submit" class="button button-success" value="東京" style="float:left">
 <% end %>
 <%= form_tag("/main/#{session[:user_id]}/addMinakusa",{method: :post}) do %>
-  <input type="submit" value="南草津">
+  <input type="submit" class="button-success button" value="南草津">
 <% end %>
+</div>

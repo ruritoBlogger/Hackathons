@@ -1,4 +1,5 @@
-<p>ここはユーザーのお家情報の更新ページです</p>
+<div class="l-constrained">
+<h1 class="border_heading">お家情報の更新ページ</h1>
 <%= form_tag("/main/#{session[:user_id]}/update",{multipart: true}) do %>
   <p>自分の名前</p>
   <input name="name" value='<%= @house.user_name %>'>
@@ -12,6 +13,7 @@
   <textarea name="caution"><%= @house.caution %></textarea>
   <p>お家の画像選択</p>
   <input type="file" name="image_name">
-  <input type="submit" value="地域選択">
+  <input type="submit" class="button-success button" value="地域選択へ">
 <% end %>
 
+</div>
