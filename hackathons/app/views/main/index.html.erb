@@ -1,16 +1,30 @@
-<h3>住居の空き状況一覧です</h3>
-
-<% @houses.each do |house| %>
-
-  <div class="houseInfo">
-    <%= house.user_name %>
-    :<%= house.house_name %>
-    状況：<%= house.detail %>
-    今日は宿泊可能かどうか：<%= house.canVisit %>
-    注意事項：<%= house.caution %>
-    ユーザーID：<%= house.user_id %>
-    <img src='<%= "/house_images/#{house.image_name}" %>' >
+<div class="l-constrained">
+  <h1>宿泊可能物件一覧</h1>
+  <div>
+    <table>
+      <tr>
+        <th>所有者</th>
+        <th>詳細</th>
+        <th>地域</th>
+        <th>宿泊可能</th>
+        <th>注意事項</th>
+        <th>物件画像</th>
+      </tr>
+      <% @houses.each do |house| %>
+        <tr>
+          <td><%= house.user_name %></td>
+          <td><%= house.detail %></td>
+          <td><% if (house.area) == 1 %>
+                東京
+              <% elsif (house.area) == 2 %>
+                南草津
+              <% end %></td>
+          <td><%= house.canVisit %></td>
+          <td><%= house.caution %></td>
+          <td><img src='<%= "/house_images/#{house.image_name}" %>' alt="" style="width:100%;" ></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
+</div>
 
-
-<% end %>
