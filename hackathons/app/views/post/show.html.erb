@@ -12,6 +12,8 @@
   <h2 class="border_heading">宿泊希望日程</h2>
   <p><%= @form.month %>月<%= @form.startDay %>日から<%= @form.longDay %>日間</p>
   <%= form_tag("/form/#{@form.id}/create",{method: :post}) do %>
-    <input class="button button-success" type="submit" value="泊まってええんやで~">
+    <div class="box">
+      <input class="button button-success" type="submit" value="泊まってええんやで~">
+    </div>
   <% end %>
 </div>
