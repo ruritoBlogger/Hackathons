@@ -1,3 +1,5 @@
+#require_relative '../../public/profile_fetch.rb'
+
 class UserController < ApplicationController
 
   def new
@@ -8,8 +10,7 @@ class UserController < ApplicationController
     @twitter = params[:twitter]
 
     if @twitter
-      py_path = File.absolute_path("../../public")
-      system("python3 " + py_path + "/profile_fetch.py #{@twitter}")
+      user_img(@twitter)
       flash[:notice] = "OK"
     end
 

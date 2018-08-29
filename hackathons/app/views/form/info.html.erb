@@ -1,5 +1,5 @@
-宿泊申請に対する回答や宿泊許可をした宿泊申請一覧です
-<h1 class="border_heading">宿泊申請</h1>
+
+<h1 class="border_heading">宿泊申請履歴</h1>
 <% @forms.each do |form| %>
   <%= form.created_at %>に申請
   <%= form.month %>月<%= form.startDay %>日から<%= form.longDay %>日間の宿泊希望
@@ -12,11 +12,11 @@
     <% end %>
   <% end %>
   <%= form_tag("/post/#{form.id}/destroy") do %>
-    <input type="submit" value="申請取り消し">
+    <input type="submit" class="button button-success" value="申請取り消し">
     <% end %>
 <% end %>
 
-
+<h1 class="border_heading">宿泊申請</h1>
 
 <%= form_tag("/form/apply",{method: :get}) do %>
   <input class="button button-success" type="submit" value="宿泊申請">

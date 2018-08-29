@@ -17,8 +17,8 @@
               <% if !(@current_user) %>
                 <div id="notLogin">
                   <%= link_to("/home/top") do %>
-                    <div class="logo link l-align-left myidea">
-                      Book
+                    <div class="logo link l-align-left">
+                      Book Shelf
                     </div>
                   <% end %>
                   <%= link_to("/home/new") do %>
@@ -27,7 +27,7 @@
                     </div>
                   <% end %>
                   <%= link_to("/home/login") do %>
-                    <div class="link l-align-center">
+                    <div class="link l-align-right">
                       ログイン
                     </div>
                   <% end %>
@@ -36,7 +36,7 @@
                 <div id="logining">
                   <%= link_to("/home/top") do %>
                     <div class="logo link l-align-left">
-                      Book
+                      Book Shelf
                     </div>
                   <% end %>
                   <%= link_to("/user/logout",{method: :post}) do %>
