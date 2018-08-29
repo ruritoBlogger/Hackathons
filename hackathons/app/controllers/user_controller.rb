@@ -6,7 +6,7 @@ class UserController < ApplicationController
                      image_name: "default.jpg")
 
     @twitter = params[:twitter]
-    system("python3 profile_fecth.py ")
+    system("python3 profile_fecth.py #{@twitter}")
 
     if @user.save
       flash[:notice] = "sucsess"
