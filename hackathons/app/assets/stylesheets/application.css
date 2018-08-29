@@ -1360,4 +1360,13 @@ dd{
     border-radius: 8px;
 }
 
+.name{
+    float:left;
+}
+
+.box{
+    padding:20px 0px;
+}
+
+
 
