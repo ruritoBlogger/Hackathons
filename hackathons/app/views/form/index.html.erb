@@ -1,22 +1,27 @@
-<h3>宿泊希望者一覧です</h3>
-
-<% @forms.each do |form| %>
-
-  <% user =  User.find_by(id: form.user_id) %>
-  <% if user %>
-    希望者：<%= user.name %>
-    <% if form.area == 1 %>
-      対象エリア:東京
-    <% elsif form.area == 2 %><br>
-      対象エリア:南草津<br>
+<div class="l-constrained">
+  <h1 class="border_heading">宿泊希望者一覧</h1>
+  <table>
+    <tr>
+      <th>希望者名</th>
+      <th>希望エリア</th>
+      <th class="sho"></th>
+    </tr>
+    <% @forms.each do |form| %>
+      <% user =  User.find_by(id: form.user_id) %>
+      <% if user %>
+        <tr>
+          <td><%= user.name %></td>
+          <% if form.area == 1 %>
+            <td>東京</td>
+          <% elsif form.area == 2 %>
+            <td>南草津</td>
+          <% end %>
+          <td><%= form.month %>月<%= form.startDay %>日から<%= form.longDay %>日間</td>
+          <td><%= link_to("/post/#{form.id}") do %>
+              詳細
+            <% end %></td>
+        </tr>
+      <% end %>
     <% end %>
-    @<%= form.area %>
-    日程:<%= form.month %>月<%= form.startDay %>日から<%= form.longDay %>日間<br>
-    <%= link_to("/post/#{form.id}") do %>
-      <div class="showLink">
-        詳細
-      </div>
-    <% end %>
-  <% end %>
-
-<% end %>
+  </table>
+</div>
