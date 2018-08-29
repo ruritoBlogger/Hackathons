@@ -78,9 +78,13 @@
     </header>
     <div id=""main>
       <% if flash[:notice] %>
-        <div id="flash">
+        <div id="scc">
           <%= flash[:notice] %>
         </div>
+        <% elsif flash[:notice_fl]%>
+      <div id="fld">
+        <%= flash[:notice_fl] %>
+      </div>
       <% end %>
     </div>
     <%= yield %>

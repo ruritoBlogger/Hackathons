@@ -1340,3 +1340,24 @@ dd{
     z-index: 10;
 }
 
+#scc{
+    text-align: center;
+    color: #7184D9;
+    border-color: #7184d9;
+    background-color: rgba(71,84,217,0.1);
+    border: solid 2px;
+    padding: 0px 4px;
+    border-radius: 8px;
+}
+
+#fld{
+    text-align: center;
+    color: #C92E36;
+    border-color: #C92E36;
+    background-color: rgba(201,46,36,0.1);
+    border: solid 2px;
+    padding: 0px 4px;
+    border-radius: 8px;
+}
+
+

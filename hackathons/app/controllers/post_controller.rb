@@ -11,13 +11,13 @@ class PostController < ApplicationController
   end
 
   def makedummy
-
   end
 
   def makeTokyo
     @form = Form.find_by(id: params[:id])
     @form.area = 1
     @form.save
+    flash[:notice] = "宿泊申請を行いました"
     redirect_to("/form/index")
   end
 
@@ -25,6 +25,7 @@ class PostController < ApplicationController
     @form = Form.find_by(id: params[:id])
     @form.area = 2
     @form.save
+    flash[:notice] = "宿泊申請を行いました"
     redirect_to("/form/index")
   end
 

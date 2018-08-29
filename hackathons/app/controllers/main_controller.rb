@@ -42,9 +42,9 @@ class MainController < ApplicationController
     end
 
     if @house.save
-      flash[:notice] = "edit sucsess!"
       redirect_to("/main/#{session[:user_id]}/select")
     else
+      flash[:notice_fl] = "failed"
     end
   end
 
@@ -60,10 +60,10 @@ class MainController < ApplicationController
       File.binwrite("public/user_images/#{@user.image_name}",image.read)
     end
     if @user.save
-      flash[:notice] = "sucsess"
+      flash[:notice] = "edit successed!"
       redirect_to("/main/#{session[:user_id]}")
     else
-      flash[:notice] = "failed"
+      flash[:notice_fl] = "failed"
       render("main/edit2")
     end
   end
@@ -74,27 +74,22 @@ class MainController < ApplicationController
   def addTokyo
     @user = User.find_by(id: session[:user_id])
     @house = Ie.find_by(user_id: session[:user_id])
-      if @house.area == 1
-        redirect_to("/main/#{session[:user_id]}")
-      else
-        @house.area = 1
-        @house.save
-        flash[:notice] = "area selected!"
-        redirect_to("/main/#{session[:user_id]}")
-      end
+    if !(@house.area == 1)
+      @house.area = 1
+      @house.save
+    end
+    flash[:notice] = "edit successed!"
+    redirect_to("/main/#{session[:user_id]}")
   end
 
   def addMinakusa
     @user = User.find_by(id: session[:user_id])
     @house = Ie.find_by(user_id: session[:user_id])
-      if @house.area == 2
-        redirect_to("/main/#{session[:user_id]}")
-      else
-        @house.area = 2
-        @house.save
-        flash[:notice] = "area selected!"
-        redirect_to("/main/#{session[:user_id]}")
-      end
+    if !(@house.area == 2)
+      @house.area = 2
+      @house.save
+    end
+    flash[:notice] = "edit successed!"
+    redirect_to("/main/#{session[:user_id]}")
   end
-
 end

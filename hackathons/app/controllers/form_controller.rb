@@ -10,6 +10,7 @@ class FormController < ApplicationController
     @form = Form.find_by(id: params[:id])
     @post = Post.new(user_id: session[:user_id],  form_id: @form.id)
     @post.save
+    flash[:notice] = "宿泊を許可しました"
     redirect_to("/form/info")
   end
 
@@ -34,6 +35,7 @@ class FormController < ApplicationController
   def delete
     @post = Post.find_by(id: params[:id])
     @post.destroy
+    flash[:notice] = "宿泊許可を取り消しました"
     redirect_to("/form/info")
   end
 
